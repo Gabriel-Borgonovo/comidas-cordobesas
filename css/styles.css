@@ -190,18 +190,34 @@ ul{
     margin-bottom: 500px;
  }
 
+ .main h2{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--color-secundario);
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-tercero);
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+ }
+
  .pizzas{
-    width: 80%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 20px;
  }
 
  .comidas{
-    margin-top: 50px;
+    margin-top: 30px;
     width: 100%;
     max-width: 250px;
     overflow: hidden;
@@ -212,7 +228,7 @@ ul{
     border: .2px solid rgb(218, 211, 211);
     padding-bottom: 20px;
     border-radius: 20px;
-    transition: transform 1s ease;
+    transition: transform .5s ease;
  }
 
  .comidas:hover{
@@ -274,6 +290,7 @@ ul{
     font-size: 20px;
     margin-bottom: 10px;
  }
+
 
  .textos_de_producto .comidas_a:hover{
     background-color: var(--color-tercero);
@@ -356,5 +373,9 @@ ul{
 
     .button_carrito i{
         font-size: 30px;
+    }
+
+    .pizzas{
+        width: 85%;
     }
 }
