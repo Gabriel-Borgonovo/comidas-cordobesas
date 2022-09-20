@@ -61,6 +61,7 @@ ul{
     padding: 15px 15px;
     position: sticky;
     top: 0;
+    z-index: 100;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -162,7 +163,7 @@ ul{
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
     align-items: center;
@@ -176,12 +177,111 @@ ul{
  .imagenes_comidas img:hover{
     transform: scale(1.4);
     filter: saturate(1.3) contrast(1.3);
+    z-index: 105;
+ }
+
+ .slider h1{
+    text-align: center;
  }
 
 /* main */
 
  .main{
-    min-height: 100vh;
+    margin-bottom: 500px;
+ }
+
+ .pizzas{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+ }
+
+ .comidas{
+    margin-top: 50px;
+    width: 100%;
+    max-width: 250px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: .2px solid rgb(218, 211, 211);
+    padding-bottom: 20px;
+    border-radius: 20px;
+    transition: transform 1s ease;
+ }
+
+ .comidas:hover{
+    transform: scale(1.1);
+    border: 3px solid var(--color-tercero);
+ }
+
+ .comidas img{
+    width: 100%;
+    height: 200px;
+ }
+
+ .textos_de_producto .comidas_titulo{
+    margin: 5px;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    color: var(--color-secundario);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+ }
+
+ .textos_de_producto p{
+    color: var(--color-secundario);
+    margin: 0;
+    padding: 0 10px; 
+ }
+
+ .textos_de_producto span{
+    display: block;
+    font-weight: 700;
+    padding: 2px;
+ }
+
+ .textos_de_producto .comidas_a{
+    display: inline-block;
+    border: 2px solid var(--color-secundario);
+    padding: 5px 20px;
+    text-decoration: none;
+    color: var(--color-secundario);
+    font-weight: 700;
+    border-radius: 10px;
+    transition: all .5s ease;
+ }
+
+ .comidas_carrito_icono{
+    color: var(--color-tercero);
+ }
+
+ .precio_antes{
+    margin-top: 5px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.623);
+    text-decoration: line-through;
+ }
+
+ .precio_actual{
+    color: var(--color-tercero);
+    font-size: 20px;
+    margin-bottom: 10px;
+ }
+
+ .textos_de_producto .comidas_a:hover{
+    background-color: var(--color-tercero);
+ }
+
+ .textos_de_producto .comidas_a:hover .comidas_carrito_icono{
+    color: var(--color-secundario);
+    font-size: 22px;
  }
 
 
