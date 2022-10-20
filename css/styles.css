@@ -11,7 +11,6 @@
 }
 
 html{
-    font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
     scroll-behavior: smooth;
     margin: 0;
@@ -149,7 +148,8 @@ body{
 .nav_ul_li a{
     text-decoration: none;
     color: var(--color-primero);
-    font-weight: 900;
+    font-weight: 500;
+    font-size: 1rem;
     letter-spacing: 2px;
     transition: color .5s ease;
 }
@@ -192,6 +192,15 @@ body{
     backdrop-filter: blur(4px);
  }
 
+ .slider-text h2{
+    letter-spacing: 2px;
+    font-weight: 400;
+ }
+
+ .slider-text p{
+    letter-spacing: 1.5px;
+ }
+
 .oscurecer{
     width: inherit;
     height: inherit;
@@ -225,101 +234,22 @@ body{
     margin-top: 100px;
  }
 
- .pizzas{
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
- }
-
- .comidas{
-    margin-top: 30px;
-    width: 100%;
-    max-width: 250px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    border: .2px solid rgb(218, 211, 211);
-    padding-bottom: 20px;
-    border-radius: 20px;
-    transition: transform .5s ease;
- }
-
- .comidas:hover{
-    transform: scale(1.1);
-    border: 3px solid var(--color-tercero);
- }
-
- .comidas img{
+ .contiene-imagen img{
     width: 100%;
     height: 200px;
  }
 
- .textos_de_producto .comidas_titulo{
-    margin: 5px;
-    font-size: 16px;
-    letter-spacing: 1.5px;
+ .contiene-textos{
     color: var(--color-primero);
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
  }
 
- .textos_de_producto p{
-    color: var(--color-primero);
-    margin: 0;
-    padding: 0 10px; 
- }
-
- .textos_de_producto span{
-    display: block;
-    font-weight: 700;
-    padding: 2px;
- }
-
- .textos_de_producto .comidas_a{
-    display: inline-block;
-    border: 2px solid var(--color-primero);
-    padding: 5px 20px;
-    text-decoration: none;
-    color: var(--color-primero);
-    font-weight: 700;
-    border-radius: 10px;
-    transition: all .5s ease;
- }
-
- .comidas_carrito_icono{
-    color: var(--color-tercero);
- }
-
- .precio_antes{
-    margin-top: 5px;
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.623);
-    text-decoration: line-through;
- }
-
- .precio_actual{
-    color: var(--color-tercero);
-    font-size: 20px;
-    margin-bottom: 10px;
- }
-
-
- .textos_de_producto .comidas_a:hover{
-    background-color: var(--color-tercero);
-    color: var(--color-secundario);
-    border-color: var(--color-secundario);
- }
-
- .textos_de_producto .comidas_a:hover .comidas_carrito_icono{
-    color: var(--color-secundario);
+ .contiene-la-card{
+    width: 90%;
+    margin-top: 30px;
+    justify-content: center;
+    gap: 50px;
  }
 
 
@@ -405,5 +335,14 @@ body{
 
     .pizzas{
         width: 85%;
+    }
+}
+
+@media screen and (min-width:960px){
+    .contiene-la-card{
+        width: 100%;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 10px;
     }
 }
