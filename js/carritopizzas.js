@@ -45,26 +45,26 @@ const $contenedorPizzas = d.getElementById("contenedor-pizzas");
  //console.log($contenedorPizzas);
 
  const mostrarPizzas = ()=>{
-    arrPizzas.forEach((piza) =>{
+    arrPizzas.forEach((pizza) =>{
         const card = d.createElement("div");
         card.classList.add("col-10", "col-sm-5", "col-md-5", "col-lg-4", "col-xl-3", "contiene-imagen");
         card.innerHTML = `
-            <img src="${piza.img}" alt="${piza.nombre}" title="${piza.nombre}" />
+            <img src="${pizza.img}" alt="${pizza.nombre}" title="${pizza.nombre}" />
             <div class="contiene-textos">
-                <h3>${piza.nombre}</h3>
-                <p>${piza.description}</p>
-                <span>$${piza.precio}</span>
-                <button id="boton${piza.id}">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                <h3>${pizza.nombre}</h3>
+                <p>${pizza.description}</p>
+                <span>$${pizza.precio}</span>
+                <button id="boton${pizza.id}">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></button>
             </div>
-        `
+        `;
 
         $contenedorPizzas.appendChild(card);
 
         // ejecutar función que agrega las pizzas al carrito
 
-        const boton = d.getElementById(`boton${piza.id}`);
+        const boton = d.getElementById(`boton${pizza.id}`);
         boton.addEventListener("click", ()=>{
-            cargarCarrito(piza.id);
+            cargarCarrito(pizza.id);
         });
 
     });
@@ -73,13 +73,13 @@ const $contenedorPizzas = d.getElementById("contenedor-pizzas");
  //función cargarCarrito
 
  const cargarCarrito = (id) =>{
-    const Pizza = arrPizzas.find((piza)=> piza.id === id);
-    const pizzaEnCarrito = carrito.find((piza)=> piza.id === id);
+    const pizza = arrPizzas.find((pizza)=> pizza.id === id);
+    const pizzaEnCarrito = carrito.find((pizza)=> pizza.id === id);
     
     if(pizzaEnCarrito){
         pizzaEnCarrito.cantidad++;
     }else{
-        carrito.push(Pizza);
+        carrito.push(pizza);
     }
 
     calcularTotalDeLaCompra();
@@ -88,4 +88,64 @@ const $contenedorPizzas = d.getElementById("contenedor-pizzas");
 
  mostrarPizzas(); 
 
+
+//Vamos a mostrar el carrito de compras
+
+const $contieneCarrito = d.getElementById("contenedorCarrito"),
+    $btnVerCarrito = d.getElementById("verCarrito");
+
+$btnVerCarrito.addEventListener("click", ()=>{
+    mostrarCarrito();
+});
+
+
+//Programamos la función mostrarCarrito()
+
+const mostrarCarrito = () => {
+
+    $contieneCarrito.innerHTML = "";
+
+    carrito.forEach((pizza) => {
+
+        const pedido = d.createElement("div");
+        pedido.classList.add("col-10", "col-sm-5", "col-md-5", "col-lg-4", "col-xl-3", "contiene-imagen");
+
+        pedido.innerHTML = `
+            <img src="${pizza.img}" alt="${pizza.nombre}" title="${pizza.nombre}" />
+            <div class="contiene-textos">
+                <h3>${pizza.nombre}</h3>
+                <p>${pizza.description}</p>
+                <span>$${pizza.precio}</span>
+                <span>${pizza.cantidad}</span>
+                <button id="eliminar${pizza.id}">Eliminar Producto <i class="fa-solid fa-trash-can"></i></button>
+            </div>
+        `;
+
+        $contieneCarrito.appendChild(pedido);
+
+        //Eliminar productos agregados al carrito
+
+        const $botonEliminar = d.getElementById(`eliminar${pizza.id}`);
+
+        $botonEliminar.addEventListener("click", () => {
+            eliminarPizzaDelCarrito(pizza.id);
+        });
+
+    });
+
+    
+    calcularTotal();
+}
  
+
+//programamos la función para eliminar productos del carrito
+
+const eliminarPizzaDelCarrito = (id) => {
+
+    const pizzaEnCarrito = carrito.find((pizza) => pizza.id === id),
+        indice = carrito.indexOf(pizzaEnCarrito);
+
+    carrito.splice(indice, 1);
+
+    mostrarCarrito();
+}
