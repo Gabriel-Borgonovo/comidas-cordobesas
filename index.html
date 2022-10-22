@@ -31,9 +31,9 @@
                 <i class="fa-solid fa-bars burguer_menu"></i>
             </button>
     
-            <button class="button_carrito">
+            <a href="#carritoCompras" class="button_carrito">
                 <i class="fa-solid fa-cart-shopping carrito"></i>
-            </button>
+            </a>
     
             <nav class="header_nav">
                 <ul class="nav_ul">
@@ -63,8 +63,17 @@
                 <article class="row ms-auto me-auto contiene-la-card" id="contenedor-pizzas">
                 </article>
 
-                <button class="boton boton-ver-carrito" id="verCarrito">Ver carrito</button>
-                <button class="boton boton-vaciar-carrito" id="vaciarCarrito">Vaciar carrito</button>
+                <div class="total-compra" id="carritoCompras">
+                    <h2>Carrito de Compras</h2>
+                    <h3>El total de la compra es de<span id="total"></span></h3>
+                </div>
+                
+                
+                <div class="botones-carrito">
+                    <button class="boton boton-ver-carrito" id="verCarrito">Ver carrito</button>
+                    <button class="boton boton-vaciar-carrito" id="vaciarCarrito">Vaciar carrito</button>
+                </div>
+                
 
                 <article class="row ms-auto me-auto contiene-el-carrito" id="contenedorCarrito">
                 </article>

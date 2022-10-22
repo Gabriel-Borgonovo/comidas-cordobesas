@@ -104,11 +104,12 @@ body{
     padding: 5px 10px;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color .5s ease;
+    transition: all .5s ease;
 }
 
 .carrito:hover{
     background-color: var(--color-secundario);
+    color: var(--color-tercero);
 }
 
 .header_nav{
@@ -243,14 +244,137 @@ body{
     color: var(--color-primero);
     display: flex;
     flex-direction: column;
+    gap: 10px;
+ }
+
+ .contiene-textos button{
+    background-color: var(--color-tercero);
+    border: 3px solid var(--color-primero);
+    color: var(--color-secundario);
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px black;
+    transition: all .3s ease;
+ }
+
+ .contiene-textos button:hover{
+    background-color: var(--color-secundario);
+    color: var(--color-primero);
+    transform: scale(1.1);
  }
 
  .contiene-la-card{
     width: 90%;
     margin-top: 30px;
     justify-content: center;
+    gap: 30px;
+ }
+
+ /********ESTILOS A LOS titulos y BOTONES DEL CARRITO*********/
+
+ .total-compra{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+ }
+
+ .total-compra h3{
+    color: var(--color-primero);
+    font-size: 25px;
+ }
+
+ .total-compra h3 span{
+    font-size: 30px;
+    letter-spacing: 1.5px;
+ }
+
+ .botones-carrito{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
     gap: 50px;
  }
+
+ .botones-carrito button{
+    background-color: var(--color-tercero);
+    border: 3px solid var(--color-primero);
+    color: var(--color-secundario);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px black;
+    transition: all .3s ease;
+ }
+
+ .botones-carrito button:hover{
+    transform: scale(1.1);
+    background-color: var(--color-secundario);
+    color: var(--color-primero);
+ }
+
+
+/********ESTILOS AL CARRITO*********/
+
+.contiene-el-carrito{
+    margin-top: 50px;
+    width: 90%;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    
+}
+
+.pizza-carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    border-bottom: 2px solid var(--color-primero);
+}
+
+.pizza-carrito img{
+    width: 50px;
+    height: 50px;
+}
+
+.contiene-textos-carrito{
+    color: var(--color-primero);
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.contiene-textos-carrito h3{
+    font-size: 14px;
+    margin: 0;
+}
+
+.pizza-carrito button{
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.pizza-carrito button i{
+    color: red;
+    background-color: aliceblue;
+    border-radius: 2px;
+    font-size: 20px;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.pizza-carrito button i:hover{
+    color: var(--color-primero);
+    background-color: red;
+}
 
 
  /* footer */
@@ -335,6 +459,18 @@ body{
 
     .pizzas{
         width: 85%;
+    }
+
+    /* imagenes del carrito */
+
+    .pizza-carrito img{
+        width: 100px;
+        height: 100px;
+    }
+
+    .contiene-textos-carrito h3{
+        font-size: 16px;
+        margin: 0;
     }
 }
 

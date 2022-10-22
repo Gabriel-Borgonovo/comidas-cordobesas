@@ -39,6 +39,12 @@ console.log(arrPizzas);
 
 let carrito = [];
 
+//comprobamos si hay algo en el localStorage, y si hay algo, lo recuperamos y cargamos al carrito
+
+if(localStorage.getItem("carrito")){
+    carrito = JSON.parse(localStorage.getItem("carrito"));
+}
+
 
 
 const $contenedorPizzas = d.getElementById("contenedor-pizzas");
@@ -80,9 +86,12 @@ const $contenedorPizzas = d.getElementById("contenedor-pizzas");
         pizzaEnCarrito.cantidad++;
     }else{
         carrito.push(pizza);
+
+        //Guardamos nuestro carrito en el LocalStorage
+        localStorage.setItem("carrito", JSON.stringify(carrito));
     }
 
-    calcularTotalDeLaCompra();
+    calcularTotal();
 
  }
 
@@ -108,17 +117,17 @@ const mostrarCarrito = () => {
     carrito.forEach((pizza) => {
 
         const pedido = d.createElement("div");
-        pedido.classList.add("col-10", "col-sm-5", "col-md-5", "col-lg-4", "col-xl-3", "contiene-imagen");
+        pedido.classList.add("col-10", "col-sm-5", "col-md-5", "col-lg-4", "col-xl-3", "contiene-imagen", "pizza-carrito");
 
         pedido.innerHTML = `
             <img src="${pizza.img}" alt="${pizza.nombre}" title="${pizza.nombre}" />
-            <div class="contiene-textos">
+            <div class="contiene-textos-carrito">
                 <h3>${pizza.nombre}</h3>
-                <p>${pizza.description}</p>
-                <span>$${pizza.precio}</span>
-                <span>${pizza.cantidad}</span>
-                <button id="eliminar${pizza.id}">Eliminar Producto <i class="fa-solid fa-trash-can"></i></button>
+                <span class="carrito-precio">$${pizza.precio}</span>
+                <span class="carrito-cantidad">${pizza.cantidad}</span>
+                
             </div>
+            <button id="eliminar${pizza.id}"><i class="fa-solid fa-square-xmark"></i></button>
         `;
 
         $contieneCarrito.appendChild(pedido);
@@ -148,4 +157,40 @@ const eliminarPizzaDelCarrito = (id) => {
     carrito.splice(indice, 1);
 
     mostrarCarrito();
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+
+// Vaciamos todo el carrito
+
+const $btnVaciar = d.getElementById("vaciarCarrito");
+
+$btnVaciar.addEventListener("click", () => {
+    vaciarElCarrito();
+});
+
+//programamos la función vaciarElCarrito()
+
+const vaciarElCarrito = () => {
+    carrito = [];
+    mostrarCarrito();
+
+    localStorage.clear();
+}
+
+
+
+// Mostrando mensaje con el total de la compra
+
+const totalCompra = d.getElementById("total");
+
+const calcularTotal = () => {
+    let sumaTotal = 0;
+    
+    carrito.forEach((pizza) => {
+        sumaTotal += pizza.precio * pizza.cantidad;
+    });
+
+    totalCompra.innerHTML = ` $${sumaTotal}`;
 }
