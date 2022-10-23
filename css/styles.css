@@ -96,6 +96,21 @@ body{
 .button_carrito{
     background-color: transparent;
     border: none;
+    text-decoration: none;
+    position: relative;
+}
+
+.button_carrito span{
+    text-decoration: none;
+    color: var(--color-primero);
+    font-weight: 500;
+    position: absolute;
+    right: 1px;
+    bottom: 0;
+    background-color: var(--color-tercero);
+    display: inline-block;
+    padding: 0 7px;
+    border-radius: 50%;
 }
 
 .carrito{

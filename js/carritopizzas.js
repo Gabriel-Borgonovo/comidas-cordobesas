@@ -48,7 +48,7 @@ if(localStorage.getItem("carrito")){
 
 
 const $contenedorPizzas = d.getElementById("contenedor-pizzas");
- //console.log($contenedorPizzas);
+ 
 
  const mostrarPizzas = ()=>{
     arrPizzas.forEach((pizza) =>{
@@ -68,9 +68,12 @@ const $contenedorPizzas = d.getElementById("contenedor-pizzas");
 
         // ejecutar función que agrega las pizzas al carrito
 
+        
+
         const boton = d.getElementById(`boton${pizza.id}`);
         boton.addEventListener("click", ()=>{
             cargarCarrito(pizza.id);
+           
         });
 
     });
@@ -92,11 +95,26 @@ const $contenedorPizzas = d.getElementById("contenedor-pizzas");
     }
 
     calcularTotal();
+    mostrarContador();
 
  }
 
  mostrarPizzas(); 
 
+//-----------------------------------------------------------------------------------
+ const $contieneContador = d.getElementById("contadorCarrito");
+
+ let contador = 0;
+
+ const mostrarContador = () => {
+
+        contador++;
+
+        $contieneContador.innerHTML = `${contador}`;
+
+    } 
+
+ //-------------------------------------------------------------------------------------
 
 //Vamos a mostrar el carrito de compras
 
