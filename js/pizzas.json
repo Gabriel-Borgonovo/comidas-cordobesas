@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "nombre": "Pizza Muzzarella",
+        "imagen": "./images/muzzarella.jpg",
+        "descripcion": "Incluye queso muzzarella, aceitunas y aceite de oliva",
+        "precio": 750
+    },
+
+    {
+        "id": 2,
+        "nombre": "Pizza Especial j&q",
+        "imagen": "./images/pizza-jamon-y-queso.jpg",
+        "descripcion": "Incluye muzzarella, jamon, aceitunas y aceite de oliva",
+        "precio": 950
+    },
+
+    {
+        "id": 3,
+        "nombre": "Pizza Calabresa",
+        "imagen": "./images/calabresa.png",
+        "descripcion": "Incluye muzzarella, salame, aceitunas y aceite de oliva",
+        "precio": 1250
+    }, 
+
+    {
+        "id": 4,
+        "nombre": "Pizza a la Celeste",
+        "imagen": "./images/pizza-celeste.webp",
+        "descripcion": "Incluye muzzarella, papas, aceitunas y aceite de oliva",
+        "precio": 1270
+    },
+
+    {
+        "id": 5,
+        "nombre": "Pizza con Morrones",
+        "imagen": "./images/pizza_de_jamón_y_morrones_6.jpg",
+        "descripcion": "Incluye muzzarella, morrones, aceitunas y jamon",
+        "precio": 1140
+    },
+
+    {
+        "id": 6,
+        "nombre": "Pizza con Anchoas",
+        "imagen": "./images/pizza-de-anchoas1.webp",
+        "descripcion": "Incluye muzzarella, anchoas, aceitunas y aceite de oliva",
+        "precio": 1240
+    },
+
+    {
+        "id": 7,
+        "nombre": "Pizza a la Napolitana",
+        "imagen": "./images/pizza-napolitana.jpg",
+        "descripcion": "Incluye muzzarella, tomates, aceitunas y aceite de oliva",
+        "precio": 1100
+    },
+
+    {
+        "id": 8,
+        "nombre": "Pizza a la Estrellada",
+        "imagen": "./images/pizza-estrellada.jpg",
+        "descripcion": "Incluye muzzarella, papas, huevos fritos, panceta y aceitunas",
+        "precio": 1400
+    },
+
+    {
+        "id": 9,
+        "nombre": "Pizza de Ternera",
+        "imagen": "./images/pizza_de_ternera.jpg",
+        "descripcion": "Incluye muzzarella, carne de res molida, aceitunas y aceite de oliva",
+        "precio": 1550
+    },
+
+    {
+        "id": 10,
+        "nombre": "Pizza de Palmitos",
+        "imagen": "./images/palmitos.png",
+        "descripcion": "Incluye muzzarella, palmitos, salsa golf y aceitunas negras",
+        "precio": 1450
+    },
+
+    {
+        "id": 11,
+        "nombre": "Pizza de Roquefort",
+        "imagen": "./images/roquefort.jpg",
+        "descripcion": "Incluye muzzarella, queso roquefort, cebolla y aceitunas negras",
+        "precio": 1470
+    },
+
+    {
+        "id": 12,
+        "nombre": "Pizza de Anana",
+        "imagen": "./images/anana.jpg",
+        "descripcion": "Incluye muzzarella, anana en rodajas, salsa golf y aceitunas negras",
+        "precio": 1360
+    }
+
+]
