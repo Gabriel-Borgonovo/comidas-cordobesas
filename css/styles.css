@@ -254,6 +254,8 @@ body{
     margin-top: 100px;
  }
 
+ /* cards */
+
  .contiene-imagen{
     margin-bottom: 30px;
     margin-right: auto;
@@ -291,12 +293,11 @@ body{
     transform: scale(1.1);
  }
 
- .contiene-la-card{
-    width: 90%;
-    margin-top: 30px;
-    justify-content: center;
-    gap: 30px;
- }
+/* Estilos al carrito de compras */
+
+.textos_carrito{
+    color: var(--color-primero);
+}
 
  /********ESTILOS A LOS titulos y BOTONES DEL CARRITO*********/
 
