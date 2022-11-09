@@ -35,7 +35,7 @@
         "id": 5,
         "nombre": "Pizza con Morrones",
         "imagen": "./images/pizza_de_jamón_y_morrones_6.jpg",
-        "descripcion": "Incluye muzzarella, morrones, aceitunas y jamon",
+        "descripcion": "Incluye muzzarella, morrones, aceitunas y jamon cocido",
         "precio": 1140
     },
 

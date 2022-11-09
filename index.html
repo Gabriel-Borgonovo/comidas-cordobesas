@@ -63,10 +63,10 @@
         <main class="main">
             <h2>Variedades de pizzas</h2>
 
-            <section class="container-fluid">
+            <section class="container">
 
                 <!-- contenedor de cada card -->
-                <article class="row" id="contenedor-productos"></article>
+                <article class="row margin-top" id="contenedor-productos"></article>
 
                 <!-- carrito -->
                 <div class="total-compra" id="carritoCompras">
@@ -99,13 +99,13 @@
     <!-- Creamos la templete para las cards que contienen los productos -->
     <template id="template-productos">
 
-        <div class="col-10 col-sm-5 col-md-5 col-lg-4 col-xl-3 contiene-imagen">
+        <div class="col-10 col-sm-6 col-lg-4 col-xl-4 contiene-imagen">
             <img src="..." alt="..." title="..." />
             <div class="contiene-textos">
                 <h3>Producto</h3>
                 <p>Descripción</p>
                 <span>$1000</span>
-                <button id="boton${pizza.id}">Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                <button>Añadir al carrito <i class="fa-solid fa-cart-shopping"></i></button>
             </div>
         </div>
 
