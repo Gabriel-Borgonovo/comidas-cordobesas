@@ -59,6 +59,8 @@ const detectarBotones = (data) => {
             
               pintarCarrito();
 
+              alertaProductoAgregado();
+
         });
     });
 }
@@ -183,10 +185,25 @@ const btnEliminarCantidad = (btn) => {
     const producto = carrito[btn.dataset.id];
     producto.cantidad --;
     if(producto.cantidad === 0){
-        delete carrito[btn.dataset.id];
+        delete carrito[btn.dataset.id]; 
     }else{
         carrito[btn.dataset.id] = {...producto};
     }
     pintarCarrito();
 }
 
+
+/***********APLICANDO LIBRERIAS********************/
+
+const alertaProductoAgregado = () =>{
+    Toastify({
+        text: "Producto agregado al carrito",
+        duration: 700,
+        gravity: "bottom",
+        position: "right",
+        style: {
+            background: "#5622D4",
+            color: "#fff",
+          }
+    }).showToast();
+}
