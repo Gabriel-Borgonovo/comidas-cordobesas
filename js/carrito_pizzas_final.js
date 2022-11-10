@@ -152,7 +152,41 @@ const vaciarCarrito = () => {
     });
 }
 
-//El octavo paso es crear una función que le de funcionalidad a los botones de aumentar y disminuir cantidad en el carrito
+//El onceavo paso es crear una función que le de funcionalidad a los botones de aumentar y disminuir cantidad en el carrito
 const botonesSumarRestar = () =>{
+    const $botonesAgregar = d.querySelectorAll("#items .btn-info"),
+        $botonesEliminar = d.querySelectorAll("#items .btn-danger");
     
+    $botonesAgregar.forEach( btn => {
+        btn.addEventListener("click", () => {
+            btnSumarCantidad(btn);
+        });
+    });
+
+    $botonesEliminar.forEach(btn => {
+        btn.addEventListener("click", () => {
+            btnEliminarCantidad(btn);
+        });
+    });
 }
+
+//función que le da funcionalidad al boton de aumentar cantidad en el carrito
+const btnSumarCantidad = (btn) => {
+    const producto = carrito[btn.dataset.id];
+    producto.cantidad ++;
+    carrito[btn.dataset.id] = {...producto};
+    pintarCarrito();
+}
+
+//función que le da funcionalidad al boton de disminuir cantidad en el carrito
+const btnEliminarCantidad = (btn) => {
+    const producto = carrito[btn.dataset.id];
+    producto.cantidad --;
+    if(producto.cantidad === 0){
+        delete carrito[btn.dataset.id];
+    }else{
+        carrito[btn.dataset.id] = {...producto};
+    }
+    pintarCarrito();
+}
+
