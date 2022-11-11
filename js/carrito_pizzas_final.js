@@ -142,6 +142,7 @@ const sumarCantidades = () => {
 //El noveno paso es crear una función que sume la cantidad total de productos agregados al carrito
 const sumarPrecios = () => {
     const precioTotal = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad*precio, 0);
+    pagarCompra(precioTotal);
     return precioTotal;
 }
 
@@ -197,7 +198,7 @@ const btnEliminarCantidad = (btn) => {
 
 const alertaProductoAgregado = () =>{
     Toastify({
-        text: "Producto agregado al carrito",
+        text: "agregado al carrito",
         duration: 700,
         gravity: "bottom",
         position: "right",
@@ -207,3 +208,57 @@ const alertaProductoAgregado = () =>{
           }
     }).showToast();
 }
+
+
+
+const $btnpagar = d.getElementById("pagar");
+
+const pagarCompra = (total) => {
+    
+    const montoTotal = total;
+    
+    $btnpagar.addEventListener("click", () => {
+
+        if(Object.values(carrito).length !==0){
+
+            Swal.fire({
+                title: `El total de tu compra es de $${montoTotal} ARS`,
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Pagar'
+              }).then((result) => {
+                carrito = {};
+                pintarCarrito();
+                if (result.isConfirmed) {
+                  Swal.fire({
+                    title:'Pago Exitoso',
+                    text:'Muchas gracias por su compra',
+                    icon:'success',
+                    showConfirmButton: false,
+                    timer: 1500
+                })  
+                }    
+              });
+
+        }else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'No hay productos en el carrito',
+                showConfirmButton: true,
+                confirmButtonText: 'Volver a comprar'
+              });
+        }
+       
+    });
+
+    
+}
+
+
+
+
+
+
+
