@@ -27,7 +27,7 @@ const pintarProductos = (data) => {
         $template.querySelector("img").setAttribute('title', producto.nombre);
 
         $template.querySelector("h3").textContent = producto.nombre;
-        $template.querySelector("p").textContent = producto.descripcion;
+        $template.querySelector(".descripcion").textContent = producto.descripcion;
         $template.querySelector("span").textContent = producto.precio;
         $template.querySelector("button").dataset.id = producto.id;
 
@@ -255,6 +255,7 @@ const pagarCompra = (total) => {
 
     
 }
+
 
 
 

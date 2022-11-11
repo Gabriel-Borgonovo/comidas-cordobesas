@@ -68,6 +68,7 @@ body{
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
+    transition: all .5s ease;
 }
 
 .h2 a{
@@ -174,6 +175,13 @@ body{
     color: var(--color-tercero);
 }
 
+/*Clase para agregar al header cuando hacemos scroll*/
+
+.header-bg-scroll{
+    background-color: var(--color-secundario);
+    box-shadow: 0 10px 20px black;
+}
+
 /* portada o slider */
 
 
@@ -231,7 +239,7 @@ body{
 /* main */
 
  .main{
-    margin-top: 110vh;
+    margin-top: 105vh;
     margin-bottom: 500px;
  }
 
@@ -247,7 +255,7 @@ body{
     width: fit-content;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 100px;
+    margin-top: 50px;
  }
 
  .margin-top{
@@ -463,7 +471,7 @@ body{
     .nav_ul_li a:hover{
         color: var(--color-tercero);
         background-color: var(--color-secundario);
-        box-shadow: 4px 4px 7px var(--color-sombra);
+        box-shadow: 0 4px 15px var(--color-sombra);
     }
 
     .button{
